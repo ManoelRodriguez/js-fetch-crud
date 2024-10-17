@@ -46,9 +46,9 @@ const atualizaCliente = (id, nome, email) => {
             email: email
         })
     })
-    .then(resposta => {
-        return resposta.json()
-    })
+        .then(resposta => {
+            return resposta.json()
+        })
 }
 
 export const clienteService = {

@@ -29,9 +29,13 @@ tabela.addEventListener('click', (evento) => {
     }
 })
 
-clienteService.listaClientes().then(
-    data => {
-        data.forEach(elemento => {
+const render = async () => {
+    const cs = await clienteService.listaClientes()
+
+        cs.forEach(elemento => {
             tabela.appendChild(criaNovaLinha(elemento.nome, elemento.email, elemento.id))
         })
-    })
+}
+
+render()
+
