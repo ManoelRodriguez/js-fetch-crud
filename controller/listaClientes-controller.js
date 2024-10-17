@@ -21,9 +21,9 @@ const criaNovaLinha = (nome, email, id) => {
 const tabela = document.querySelector('[data-tabela]')
 
 tabela.addEventListener('click', (evento) =>{
-    let isBtnDelete = evento.target.className == 'botao-simples botao-simples--excluir'
+    let isBtnDelete = evento.target.className === 'botao-simples botao-simples--excluir'
     if(isBtnDelete){
-        const linhaCliente = evento.target.closest('[data-id]')
+        const linhaCliente = evento.target.closest('[data-id]') //pegando o elemento mais próximo da td -> TR
         let id = linhaCliente.dataset.id
         clienteService.removeCliente(id)
     }
